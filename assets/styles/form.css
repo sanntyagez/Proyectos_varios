@@ -1,0 +1,133 @@
+/*estilos  de fuente*/
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-mono {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed
+} 
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background: rgb(17,33,45); /*azul marino oscuro > gris claro 0° lineal*/
+    background: linear-gradient(0deg, rgba(17,33,45,1) 0%, rgba(71,110,140,1) 39%, rgba(204,208,207,1) 100%);
+    background-attachment: fixed
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 35px;
+    border-radius: 10px 10px 10px 10px;
+    /* margin-bottom: auto;  */
+}
+.login-box {
+    height: 600px;
+}
+.login-box, .register-box {
+    font-size: large;
+    background: #e5e5e5FF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 500px; 
+}
+.register-box{
+    height: 530px;
+}
+.register-box > h1 {
+    font-size: 0.8cm;
+}
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+.logo {
+    /* object-fit: contain;
+    width: auto;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    margin: 10px;
+    width: 40%; 
+    height: 40%; 
+    /* object-fit: contain; Ajuste de la imagen dentro del contenedor */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin: 5px 0;
+}
+
+p{
+    margin: -5px 0;;
+}
+
+input {
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #11212d;
+    /* border-radius: 5px; */
+    width: 70%;
+}
+
+form > div {
+    display: flex;
+    flex-direction: row;
+    align-items: self-end;
+    justify-content: space-between;
+}
+
+.btn-foot {
+    margin-top: 12px;
+    align-self: center;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5%;
+    /* background-color: #11212d;
+    color: #9ba8ab;
+    border: solid 3px #9ba8ab; */
+    cursor: pointer;
+    background: #b7ff68FF;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0px 4px 0px 0px #000000FF;
+    /* position: absolute; */
+    left: 550px;
+    top: 667px;
+    width: 182px;
+    height: 45px;
+}
+.btn-foot:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 0px 0px #000000FF;
+}
+

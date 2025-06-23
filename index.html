@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inicio de Sesión</title>
+    <link rel="stylesheet" href="assets/styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1 class="roboto-mono">Iniciar Sesión</h1>
+            <h3 style="text-align: center;" class="roboto-mono">sistema de digitalización de legajos</h3>
+            <div class="logo">
+                <img src="assets/icons/logo_sdl2.png" alt="logo isfd">
+            </div>
+            <form action="conexiones/login.php" method="post">
+                <!-- <label for="usuario">usuario</label> -->
+                <input type="text" id="usuario" name="usuario" required placeholder="ingrese su correo o DNI">
+                <!-- <label for="contrasena">contraseña</label> -->
+                <input type="password" id="contrasena" name="contrasena" placeholder="ingrese contraseña" required>
+                <button class="btn-foot roboto-mono" type="submit">INGRESAR</button>
+                <!-- <button class="btn-foot" type="button" onclick="window.location.href='pagina_principal.php';">Entrar</button> -->
+                <!-- <button class="btn-foot" type="button" onclick="window.location.href='registro.php';">Registrarse</button> -->
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
