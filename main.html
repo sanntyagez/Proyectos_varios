@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+        }
+        .rol-label {
+            font-size: 1.1em;
+        }
+        .salir-btn {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        main {
+            display: flex;
+            /* align-content: center; */
+            justify-content: center;
+            gap: 32px;
+            margin-top: 4cm;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            width: 200px;
+            text-align: center;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover {
+            background-color: #d8d8d8;
+            cursor: pointer;
+        }
+        .card img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+        }
+        .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="rol-label">Rol: usuario</span>
+        <button class="salir-btn">Salir</button>
+        <script>
+            document.querySelector('.salir-btn').addEventListener('click', function() {
+                // Aquí puedes agregar la lógica para cerrar sesión, por ejemplo:
+                // Eliminar datos de sesión, redirigir al login, etc.
+                window.location.href = 'login.html';
+            });
+        </script>
+    </header>
+    <main>
+        <div class="card" onclick="location.href='upload.html'">
+            <img src="https://img.icons8.com/ios-filled/100/upload.png" alt="Subir archivos">
+            <div class="card-title">Subir archivos</div>
+        </div>
+        <div class="card" onclick ¿="location.href='view_files.html'">
+            <img src="https://img.icons8.com/ios-filled/100/view-file.png" alt="Ver archivos">
+            <div class="card-title">Ver archivos</div>
+        </div>
+        <div class="card" onclick="location.href='view_applicants.html'">
+            <img src="https://img.icons8.com/ios-filled/100/conference.png" alt="Ver postulantes">
+            <div class="card-title">Ver postulantes</div>
+        </div>
+        <div class="card" onclick="location.href='admin_options.html'">
+            <img src="https://img.icons8.com/ios-filled/100/settings.png" alt="Opciones de administrador">
+            <div class="card-title">Opciones de administrador</div>
+        </div>
+    </main>
+    <footer>
+        Bienvenido John Doe
+    </footer>
+</body>
+</html>
