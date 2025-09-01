@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir archivos</title>
+    <style>
+        header {
+            background: #2c3e50;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+        td {
+            padding: 8px;
+        }
+        .discardButton {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-right: 16px;
+        }
+        .submitButton {
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Reutiliza el header de main.html con una etiqueta <header> vacía o incluye mediante un fragmento/server-side include si es posible -->
+    <header>
+            <button type="button" onclick="window.location.href='main.html'" style="background:none;border:none;cursor:pointer;color:#fff">
+                <img src="https://img.icons8.com/ios-filled/ffffff/exit.png" alt="Volver a la página principal" title="Volver a la página principal" style="width:32px;height:32px;">
+            </button>
+
+        <!-- Puedes usar una etiqueta <header> vacía aquí y reutilizar el mismo contenido de main.html mediante un include si usas un motor de plantillas o JavaScript para cargar el header dinámicamente -->
+    </header>
+    <main>
+        <h1>Página de Subir Archivos</h1>
+        <p>Aquí puedes implementar la funcionalidad para subir archivos.</p>
+        <table border="1" cellpadding="8" cellspacing="0" style="background: #fff; margin: 24px auto; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Profesorado</th>
+                    <th>Tecnicatura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Título<br>
+                        <input type="file" name="profesorado_titulo">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Título<br>
+                        <input type="file" name="tecnicatura_titulo">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Posgrados<br>
+                        <input type="file" name="profesorado_posgrados">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Posgrados<br>
+                        <input type="file" name="tecnicatura_posgrados">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Postítulos<br>
+                        <input type="file" name="profesorado_postitulos">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Postítulos<br>
+                        <input type="file" name="tecnicatura_postitulos">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Antigüedad docente<br>
+                        <input type="file" name="profesorado_antiguedad">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Antigüedad docente<br>
+                        <input type="file" name="tecnicatura_antiguedad">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Antecedentes de desarrollo profesionales<br>
+                        <input type="file" name="profesorado_antecedentes">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Antecedentes de desempeño profesionales<br>
+                        <input type="file" name="tecnicatura_antecedentes">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cargos obtenidos por concurso<br>
+                        <input type="file" name="profesorado_cargos">
+                        <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                        <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                    <td>
+                        Otros antecedentes orientados al perfil personal<br>
+                        <input type="file" name="tecnicatura_cargos">
+                                                <input type="text" name="profesorado_titulo_text" placeholder="Descripción del archivo">
+                                                <input type="text" name="profesorado_titulo_text2" placeholder="Nombre de la entidad emisora">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align:center; margin-top:16px;">
+            <button type="button" class="discardButton" onclick="descartarArchivos()">Descartar archivos seleccionados</button>
+            <!-- con el button descarta los archivos seleccionados -->
+            <script>
+            function descartarArchivos() {
+                const inputs = document.querySelectorAll('input[type="file"]');
+                inputs.forEach(input => input.value = '');
+            }
+            </script>
+
+            <button type="submit" class="submitButton" onclick="enviarArchivos()">Enviar todos los archivos</button>
+        </div>
+        <script>
+        function enviarArchivos() {
+            const allowedExtensions = ['doc', 'docx', 'pdf', 'jpg', 'jpeg', 'png'];
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            for (const input of fileInputs) {
+                const file = input.files[0];
+                if (file) {
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    if (!allowedExtensions.includes(ext)) {
+                        alert(`El archivo "${file.name}" no tiene una extensión permitida.`);
+                        return;
+                    }
+                }
+            }
+            alert('Funcionalidad de envío de archivos al servidor aún no implementada.');
+            // Aquí puedes agregar la lógica para enviar los archivos al servidor usando JavaScript y fetch/AJAX.
+            if (confirm("¿Confirma subir los siguientes archivos? Esta acción no se puede deshacer")) {
+                // Aquí iría la lógica para enviar los archivos al servidor
+                alert('Archivos enviados (simulado).');
+            } else {
+                alert('Envío cancelado.');
+            }
+        }
+        </script>
+    </main>
+    <footer></footer>
+</body>
+</html>
