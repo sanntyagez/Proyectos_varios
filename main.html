@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel Principal</title>
-    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background: #f4f4f4;
-        }
-        header {
-            background: #2c3e50;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 32px;
         }
         .rol-label {
             font-size: 1.1em;
@@ -70,40 +64,46 @@
             width: 100%;
             bottom: 0;
         }
-    </style>
+    </style> -->
 </head>
-<body>
-    <header>
+<body class="bg-light">
+    <header class="d-flex justify-content-between align-items-center bg-dark text-white py-3 px-4">
         <span class="rol-label">Rol: usuario</span>
-        <button class="salir-btn">Salir</button>
+        <button class="salir-btn btn btn-danger">Salir</button>
         <script>
             document.querySelector('.salir-btn').addEventListener('click', function() {
-                // Aquí puedes agregar la lógica para cerrar sesión, por ejemplo:
-                // Eliminar datos de sesión, redirigir al login, etc.
                 window.location.href = 'login.html';
             });
         </script>
     </header>
-    <main>
-        <div class="card" onclick="location.href='upload.html'">
-            <img src="https://img.icons8.com/ios-filled/100/upload.png" alt="Subir archivos">
-            <div class="card-title">Subir archivos</div>
+    <main class="d-flex justify-content-center gap-4 mt-5">
+        <div class="card shadow text-center" style="width: 14rem; cursor:pointer;" onclick="location.href='upload.html'">
+            <img src="https://img.icons8.com/ios-filled/100/upload.png" class="card-img-top mx-auto mt-3" alt="Subir archivos" style="width:64px;height:64px;">
+            <div class="card-body">
+                <h5 class="card-title">Subir archivos</h5>
+            </div>
         </div>
-        <div class="card" onclick ¿="location.href='view_files.html'">
-            <img src="https://img.icons8.com/ios-filled/100/view-file.png" alt="Ver archivos">
-            <div class="card-title">Ver archivos</div>
+        <div class="card shadow text-center" style="width: 14rem; cursor:pointer;" onclick="location.href='view_files.html'">
+            <img src="https://img.icons8.com/ios-filled/100/view-file.png" class="card-img-top mx-auto mt-3" alt="Ver archivos" style="width:64px;height:64px;">
+            <div class="card-body">
+                <h5 class="card-title">Ver archivos</h5>
+            </div>
         </div>
-        <div class="card" onclick="location.href='view_applicants.html'">
-            <img src="https://img.icons8.com/ios-filled/100/conference.png" alt="Ver postulantes">
-            <div class="card-title">Ver postulantes</div>
+        <div class="card shadow text-center" style="width: 14rem; cursor:pointer;" onclick="location.href='view_applicants.html'">
+            <img src="https://img.icons8.com/ios-filled/100/conference.png" class="card-img-top mx-auto mt-3" alt="Ver postulantes" style="width:64px;height:64px;">
+            <div class="card-body">
+                <h5 class="card-title">Ver postulantes</h5>
+            </div>
         </div>
-        <div class="card" onclick="location.href='admin_options.html'">
-            <img src="https://img.icons8.com/ios-filled/100/settings.png" alt="Opciones de administrador">
-            <div class="card-title">Opciones de administrador</div>
+        <div class="card shadow text-center" style="width: 14rem; cursor:pointer;" onclick="location.href='admin_options.html'">
+            <img src="https://img.icons8.com/ios-filled/100/settings.png" class="card-img-top mx-auto mt-3" alt="Opciones de administrador" style="width:64px;height:64px;">
+            <div class="card-body">
+                <h5 class="card-title">Opciones de administrador</h5>
+            </div>
         </div>
     </main>
-    <footer>
-        Bienvenido John Doe
+    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
+        <!-- Bienvenido John Doe -->
     </footer>
 </body>
 </html>
