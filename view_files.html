@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ver Legajos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* .table-container {
+      margin-top: 30px;
+    }
+    .table th {
+      background-color: #f8f9fa;
+    }
+    .icon-btn {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .icon-btn:hover {
+      color: #0d6efd;
+    } */
+  </style>
+</head>
+<body class="bg-light">
+  <!-- Reutiliza el header de main.html con una etiqueta <header> vacía o incluye mediante un fragmento/server-side include si es posible -->
+  <header class="d-flex justify-content-between align-items-center bg-dark text-white py-3 px-4">
+    <span class="rol-label">Rol: usuario</span>
+      <button type="button" class="btn btn-dark" onclick="window.location.href='main.html'">
+        <img src="https://img.icons8.com/ios-filled/ffffff/exit.png" alt="Volver a la página principal" title="Volver a la página principal" style="width:32px;height:32px;">
+    </button>
+  </header>
+
+  <main class="container py-4">
+    <h2 class="mb-4">📁 Página: Ver Legajos</h2>
+
+    <div class="mb-4">
+      <!-- Filtros de busqueda-->
+          <form class="row g-3">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="buscarNombre" placeholder="Buscar por nombre">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="buscarLegajo" placeholder="Buscar por número de legajo">
+            </div>
+            <div class="col-md-4">
+              <select class="form-select" id="filtroAlfabetico">
+                <option value="">Filtrar A-Z</option>
+                <option value="asc">A-Z</option>
+                <option value="desc">Z-A</option>
+              </select>
+            </div>
+            <div class="col md-4">
+              <select class="form-select" id="filtroFecha">
+                <option value="">Filtrar por fecha de carga</option>
+                <option value="newest">Más recientes</option>
+                <option value="oldest">Más antiguos</option>
+              </select>
+            </div>
+          </form>
+    </div>
+
+    <div class="row">
+      <!-- Lista de Legajos (Izquierda) -->
+      <div class="col-md-5">
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+          Legajos
+          </div>
+          <ul class="list-group list-group-flush" id="legajos-list">
+            <li class="list-group-item d-flex justify-content-between align-items-center" onclick="mostrarArchivos(0), cambiarColorSeleccionado(0)">
+              Elliot Alderson
+              <span class="badge bg-secondary">Profesor</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" onclick="mostrarArchivos(1), cambiarColorSeleccionado(1)">
+              John Doe
+              <span class="badge bg-secondary">Ingresante</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" onclick="mostrarArchivos(2), cambiarColorSeleccionado(2)">
+              Jane Doe
+              <span class="badge bg-secondary">Rector</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" onclick="mostrarArchivos(3), cambiarColorSeleccionado(3)">
+              Trinity 
+              <span class="badge bg-secondary">Profesor</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Contenido de Legajos (Derecha) -->
+      <div class="col-md-7">
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white">
+          Archivos del Legajo
+          </div>
+          <div class="card-body" id="archivos-legajo">
+            <ul class="list-group">
+              <li class="list-group-item">Seleccione un legajo para ver sus archivos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Datos de ejemplo
+      const archivosPorLegajo = [
+      [
+        { nombre: "DNI.pdf", especializacion: "tecnicatura", entidad: "UNNE", fecha: "2024-05-01"  },
+        { nombre: "Contrato.docx", especializacion: "profesorado", entidad: "UTN", fecha: "2024-05-02" }
+      ],
+      [
+        { nombre: "CV.pdf", especializacion: "profesorado", entidad: "ISFD", fecha: "2024-04-15" }
+      ],
+      [
+        { nombre: "ReciboSueldo.pdf", especializacion: "profesorado", entidad: "UBA", fecha: "2024-03-10" },
+        { nombre: "CertificadoEstudios.pdf", especializacion: "", entidad: "", fecha: "2024-03-12" }
+      ]
+      ];
+
+      function cambiarColorSeleccionado(idx) {
+        const items = document.querySelectorAll('#legajos-list .list-group-item');
+        items.forEach((item, index) => {
+          if (index === idx) {
+            item.classList.add('bg-primary', 'text-white');
+          } else {
+            item.classList.remove('bg-primary', 'text-white');
+          }
+        });
+      }
+
+      function mostrarArchivos(idx) {
+      const archivos = archivosPorLegajo[idx];
+      let html = '<ul class="list-group">';
+      if (archivos && archivos.length > 0) {
+        archivos.forEach(a => {
+        html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+              <span>${a.nombre}</span>
+              <span class="badge bg-info text-dark">${a.especializacion || 'N/A'}</span>
+              <span class="badge bg-warning text-dark">${a.entidad || 'N/A'}</span>
+              <span class="badge bg-light text-dark">${a.fecha}</span>
+              <button class="btn btn-sm btn-outline-primary" onclick="descargarArchivo('${a.nombre}')">Descargar</button>
+            </li>`;
+        });
+      } else {
+        html += '<li class="list-group-item">No hay archivos para este legajo.</li>';
+      }
+      html += '</ul>';
+      document.getElementById('archivos-legajo').innerHTML = html;
+      }
+
+      function descargarArchivo(nombreArchivo) {
+        // Simula la descarga del archivo (en un caso real, deberías tener la URL real del archivo)
+        // Aquí simplemente se muestra una alerta, pero puedes cambiarlo por window.location.href o crear un enlace temporal
+        alert('Descargando: ' + nombreArchivo);
+        // Ejemplo realista si tuvieras la URL:
+        // window.location.href = '/ruta/a/archivos/' + encodeURIComponent(nombreArchivo);
+      }
+    </script>
+  </main>
+
+</body>

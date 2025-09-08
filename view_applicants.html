@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ver Postulantes</title>
+</head>
+<body>
+    <!-- <header>
+            <button type="button" onclick="window.location.href='main.html'" style="background:none;border:none;cursor:pointer;color:#fff">
+                <img src="https://img.icons8.com/ios-filled/ffffff/exit.png" alt="Volver a la página principal" title="Volver a la página principal" style="width:32px;height:32px;">
+            </button>
+
+    </header> -->
+    <header class="d-flex justify-content-between align-items-center bg-dark text-white py-3 px-4">
+        <span class="rol-label">Rol: usuario</span>
+        <button type="button" class="btn btn-dark" onclick="window.location.href='main.html'">
+            <img src="https://img.icons8.com/ios-filled/ffffff/exit.png" alt="Volver a la página principal" title="Volver a la página principal" style="width:32px;height:32px;">
+        </button>
+    </header>
+
+    <main class="container py-4">
+        <h2>👤 Página de Ver Postulantes</h2>
+        <p>Aquí puedes implementar la funcionalidad para ver postulantes.</p>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="🔍 Buscar por nombre de usuario">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>🎓 Disciplina o especialización</option>
+                    <option value="educacion">Educación</option>
+                    <option value="historia">Historia</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>📅 Ordenar por fecha</option>
+                    <option value="reciente">Más reciente</option>
+                    <option value="antiguo">Más antiguo</option>
+                </select>
+            
+        </div>
+
+        <table border="1" cellpadding="8" cellspacing="0" class="table table-bordered table-hover mt-4" style="background: #fff; margin: 24px auto; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>CV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>juanperez@gmail.com.ar</td>
+                    <td>+54 9 11 1234-5678</td>
+                    <td><a href="#" target="_blank">Ver CV</a></td> <!--opcion de subir CV no implementada aun-->
+                </tr>    
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 16px;">
+            <button class="discardButton" onclick="window.location.href='main.html'">Descartar</button>
+            <button class="submitButton" onclick="alert('Cambios guardados')">Guardar Cambios</button>
+        </div>
+    </main>
+    <!-- Reutiliza el footer de main.html con una etiqueta <footer> vacía o incluye mediante un fragmento/server-side include si es posible -->
+    <footer>
+        &copy; 2024 Mi Aplicación. Todos los derechos reservados.
+    </footer>
+    <!-- Puedes usar una etiqueta <footer> vacía aquí y reutilizar el mismo contenido de main.html mediante un include si usas un motor de plantillas o JavaScript para cargar el footer dinámicamente -->
+</body>
+</html>    
