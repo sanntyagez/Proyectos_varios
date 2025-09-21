@@ -1,14 +1,8 @@
-import React from 'react';
-import './styles/App.css';
-import ExampleComponent from './components/ExampleComponent';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/App.css"; // o el nombre correcto de tu CSS
 
-const App = () => {
-    return (
-        <div className="App">
-            <h1>Welcome to My React App</h1>
-            <ExampleComponent someProp="This is a prop!" />
-        </div>
-    );
-};
-
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
